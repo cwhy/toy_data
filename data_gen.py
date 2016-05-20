@@ -64,7 +64,7 @@ def visualize_2D(_Classes, _colors, classifyF=None, res=150):
         for _c in range(len(_Classes)):
             _y_hats_xy = y_hats[:, _c].reshape((res, res))/4
             _c_col = np.tile(_colors[_c], (res, res, 1))
-            print(_colors[_c])
+            # print(_colors[_c])
             _rgba = np.dstack((_c_col, np.round(255*_y_hats_xy))).astype(np.uint8)
             img = np.squeeze(_rgba.view(np.uint32))
             p.image_rgba(image=[img], x=[_xr[0, 0]], y=[_xr[1, 0]],
