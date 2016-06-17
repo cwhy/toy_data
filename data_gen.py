@@ -55,7 +55,9 @@ def visualize_2D(_Classes, _colors, classifyF=None, res=150):
     _xmin = np.min(np.array(_xmins), axis=0)
     _xmax = np.max(np.array(_xmaxs), axis=0)
     _xr = np.vstack((_xmin, _xmax)).T
-    p = bp.figure(x_range=_xr[0, :].tolist(), y_range=_xr[1, :].tolist())
+    p = bp.figure(x_range=_xr[0, :].tolist(),
+                  y_range=_xr[1, :].tolist(),
+                  plot_width=400)
     if classifyF:
         x_mesh = np.linspace(_xr[0, 0], _xr[0, 1], res)
         y_mesh = np.linspace(_xr[1, 0], _xr[1, 1], res)
