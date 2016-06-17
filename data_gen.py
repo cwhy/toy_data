@@ -46,7 +46,7 @@ def split(_fts, _lbs, test_ratio):
     return (_fts[i_train, :], _lbs[i_train, :]), (_fts[i_test, :], _lbs[i_test, :])
 
 
-def visualize_2D(_Classes, _colors, classifyF=None, res=150, fig_width=400):
+def visualize_2D(_Classes, _colors, classifyF=None, res=150, fig_width=500):
     _xmins = []
     _xmaxs = []
     for _C in _Classes:
@@ -57,7 +57,8 @@ def visualize_2D(_Classes, _colors, classifyF=None, res=150, fig_width=400):
     _xr = np.vstack((_xmin, _xmax)).T
     p = bp.figure(x_range=_xr[0, :].tolist(),
                   y_range=_xr[1, :].tolist(),
-                  plot_width=fig_width)
+                  plot_width=fig_width,
+                  plot_height=fig_width)
     if classifyF:
         x_mesh = np.linspace(_xr[0, 0], _xr[0, 1], res)
         y_mesh = np.linspace(_xr[1, 0], _xr[1, 1], res)
