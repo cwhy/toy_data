@@ -6,10 +6,11 @@ From toy_data:
 
 import numpy as np
 import numpy.random as rnd
-from data_types import DataSet
-import color
+from . import data_types
+from . import color
 import bokeh.plotting as bp
 
+DataSet = data_types.DataSet
 
 def split(_fts, _lbs, test_ratio):
     indices = range(_fts.shape[0])
