@@ -63,7 +63,14 @@ def visualize_1D_regression(data, regressF=None, res=150, fig_width=500):
     p.xaxis.axis_label = 'X'
     p.yaxis.axis_label = 'y'
 
-    p.circle(data.X[:, 0], data.y[:, 0], color=data.color, alpha=0.5, line_alpha=0, size=8)
+    p.circle(data.tr.X[:, 0], data.tr.y[:, 0],
+             color=data.tr.color, alpha=0.5, line_alpha=0, size=8,
+             legend="Training set"
+             )
+    p.circle(data.tst.X[:, 0], data.tst.y[:, 0],
+             color=data.tst.color, alpha=0.5, line_alpha=0, size=8,
+             legend="Testing set"
+             )
     x_mesh = np.linspace(data.X_range[0], data.X_range[1], res)
 
     p.line(x_mesh, data.model(x_mesh), color='green')
