@@ -1,5 +1,6 @@
-import gaussian_mixtures as gmg
-import sine_wave as swg
+import toy_data.sine_wave as swg
+
+from toy_data import gaussian_mixtures as gmg
 
 if False:
     x_dim = 2

@@ -3,12 +3,13 @@ Includes Gaussian Mixture Generator
 From toy_data:
     Module for toy-data generation for ML experiments
 """
-import numpy as np
-from . import color
 import bokeh as bk
 import bokeh.plotting as bp
+import numpy as np
 import numpy.random as rnd
-from . import data_types
+
+from toy_data import color
+from toy_data import data_types
 
 DataSet = data_types.DataSet
 

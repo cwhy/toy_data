@@ -4,13 +4,15 @@ From toy_data:
     Module for toy-data generation for ML experiments
 """
 
+import bokeh.plotting as bp
 import numpy as np
 import numpy.random as rnd
-from . import data_types
-from . import color
-import bokeh.plotting as bp
+
+from toy_data import color
+from toy_data import data_types
 
 DataSet = data_types.DataSet
+
 
 def split(_fts, _lbs, test_ratio):
     indices = range(_fts.shape[0])
@@ -31,7 +33,6 @@ class SineWave:
                  split_ratio=0.2):
         """
 
-        :type dim: int
         """
         self.frequency = frequency
         self.phase = phase
@@ -43,7 +44,8 @@ class SineWave:
         self.X = rnd.uniform(X_range[0], X_range[1], n_samples)
         self.X = self.X.reshape((n_samples, 1))
 
-        self.y_sine = y_offset + self.A * np.sin(self.frequency * self.X + self.phase)
+        self.model = lambda x: y_offset + self.A * np.sin(self.frequency * x + self.phase)
+        self.y_sine = self.model(self.X)
         self.y = self.y_sine + rnd.normal(0, sigma, (n_samples, 1))
         self.y = self.y.reshape((n_samples, 1))
 
@@ -59,5 +61,10 @@ def visualize_1D_regression(data, regressF=None, res=150, fig_width=500):
     p.xaxis.axis_label = 'X'
     p.yaxis.axis_label = 'y'
 
-    p.circle(data.X[:, 0], data.y[:, 0], color=data.color, size=8)
+    p.circle(data.X[:, 0], data.y[:, 0], color=data.color, alpha=0.5, line_alpha=0, size=8)
+    x_mesh = np.linspace(data.X_range[0], data.X_range[1], res)
+
+    p.line(x_mesh, data.model(x_mesh), color='green')
+    if regressF:
+        p.line(x_mesh, regressF(x_mesh), color='black')
     bp.show(p)

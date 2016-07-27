@@ -31,7 +31,8 @@ def get_N_by_hue(N, s=0.7, v=0.7):
     return colors
 
 
-def random_color(v=0.7):
+def random_color(v=0.7) -> (int, int, int):
     hsv = (rnd.random(), rnd.random(), v)
     c = tuple(int(round(255 * rgb)) for rgb in colorsys.hsv_to_rgb(*hsv))
     return c
+
