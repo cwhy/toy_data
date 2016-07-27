@@ -39,7 +39,6 @@ class SineWave:
         self.y_offset = y_offset
         self.A = A
         self.X_range = X_range
-        self.color = color.random_color()
 
         self.X = rnd.uniform(X_range[0], X_range[1], n_samples)
         self.X = self.X.reshape((n_samples, 1))
@@ -52,6 +51,9 @@ class SineWave:
         (tr_X, tr_y), (tst_X, tst_y) = split(self.X, self.y, split_ratio)
         self.tr = DataSet(tr_X, tr_y)
         self.tst = DataSet(tst_X, tst_y)
+
+        colors = color.get_N_by_hue(3)
+        self.color, self.tr.color, self.tst.color = colors
 
 
 def visualize_1D_regression(data, regressF=None, res=150, fig_width=500):
