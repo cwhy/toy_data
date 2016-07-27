@@ -23,7 +23,12 @@ color_loop = [
 
 
 def get_N_by_hue(N, s=0.7, v=0.7):
-    HSV_tuples = [(((x + rnd.random()) / N) % 1, s, v) for x in range(N)]
+    phase = rnd.random()
+    HSV_tuples = list()
+    for x in range(N):
+        hue = (((x + rnd.random()/2) / N) + phase) % 1
+        HSV_tuples.append((hue, s, v))
+
     colors = []
     for hsv in HSV_tuples:
         c = tuple(int(round(255 * rgb)) for rgb in colorsys.hsv_to_rgb(*hsv))
