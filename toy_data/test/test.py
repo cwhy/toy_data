@@ -6,8 +6,8 @@ import toy_data.data_types as tp
 
 from toy_data import gaussian_mixtures as gmg
 
-COLOR = True
-COV_SHIFT = False
+COLOR = False
+COV_SHIFT = True
 
 if COLOR:
     #print(c.get_N_by_hue(3))
@@ -31,4 +31,5 @@ if False:
 if COV_SHIFT:
     the_model = m.Sine()
     cs = cov_shift.Gaussian_Shift_1D(model=the_model)
-    cov_shift.visualize_1D_regression(cs)
+    # cov_shift.visualize_1D_regression(cs)
+    cov_shift.visualize_1D_regression_with_tr_weights(cs, cs.tr.X)

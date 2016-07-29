@@ -32,6 +32,10 @@ def int2float(color_int: (int, int, int)) -> (float, float, float):
     return tuple(rgb / 255 for rgb in color_int)
 
 
+def int2hex(rgb_color: (int, int, int)) -> "":
+    return "#{0:02x}{1:02x}{2:02x}".format(*rgb_color)
+
+
 def get_N_by_hue(N, s=0.7, v=0.7):
     phase = rnd.random()
     HSV_tuples = list()
@@ -50,21 +54,21 @@ def random_color(v=0.7) -> (int, int, int):
 
 def create_ramp_by_color(resolution: int, color: (int, int, int)):
     h, s, _ = colorsys.rgb_to_hsv(*int2float(color))
-    v_ramp = np.linspace(0, 1, resolution)
+    v_ramp = np.linspace(1, 0, resolution)
     return [float2int(colorsys.hsv_to_rgb(h, s, v)) for v in v_ramp]
 
 
-def map_color(arr, resolution, base_color=None):
+def map_color(arr: [], base_color=None, color_res=256) -> "":
     min_a, max_a = (min(arr), max(arr))
 
     def get_num_col_index(num):
-        return int(round((num - min_a) / (max_a - min_a) * (resolution-1)))
+        return int(round((num - min_a) / (max_a - min_a) * (color_res - 1)))
 
     arr_n = [get_num_col_index(c) for c in arr]
     if base_color:
-        color_ramp = create_ramp_by_color(resolution, base_color)
+        color_ramp = [int2hex(c) for c in create_ramp_by_color(color_res, base_color)]
     else:
-        color_ramp = palettes.viridis(resolution)
+        color_ramp = palettes.viridis(color_res)
 
     arr_colors = [color_ramp[i] for i in arr_n]
     return arr_colors
