@@ -84,13 +84,13 @@ def visualize_1D_regression_with_tr_weights(data, weights, regressF=None, res=15
               color=tr_color, alpha=0.5, line_alpha=0, size=8,
               legend="Training set"
               )
-    # p.circle(data.tst.X[:, 0], data.tst.y[:, 0],
-    #          color=data.tst.color, alpha=0.5, line_alpha=0, size=8,
-    #          legend="Testing set"
-    #          )
-    # x_mesh = np.linspace(data.X_range[0], data.X_range[1], res)
+    p.circle(data.tst.X[:, 0], data.tst.y[:, 0],
+             color=data.tst.color, alpha=0.5, line_alpha=0, size=8,
+             legend="Testing set"
+             )
+    x_mesh = np.linspace(data.X_range[0], data.X_range[1], res)
 
-    # p.line(x_mesh, data.model(x_mesh), color='green')
-    # if regressF:
-    #    p.line(x_mesh, regressF(x_mesh), color='black')
+    p.line(x_mesh, data.model(x_mesh), color='green')
+    if regressF:
+        p.line(x_mesh, regressF(x_mesh), color='black')
     bp.show(p)

@@ -52,9 +52,11 @@ def random_color(v=0.7) -> (int, int, int):
     return float2int(colorsys.hsv_to_rgb(*hsv))
 
 
-def create_ramp_by_color(resolution: int, color: (int, int, int)):
+def create_ramp_by_color(resolution: int,
+                         color: (int, int, int),
+                         v_range:(float, float)=(0.2, 0.8)):
     h, s, _ = colorsys.rgb_to_hsv(*int2float(color))
-    v_ramp = np.linspace(1, 0, resolution)
+    v_ramp = np.linspace(v_range[1], v_range[0], resolution)
     return [float2int(colorsys.hsv_to_rgb(h, s, v)) for v in v_ramp]
 
 
