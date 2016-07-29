@@ -54,8 +54,10 @@ def random_color(v=0.7) -> (int, int, int):
 
 def create_ramp_by_color(resolution: int,
                          color: (int, int, int),
-                         l_range:(float, float)=(0.1, 0.8)):
+                         l_range: (float, float) = (0.3, 0.85),
+                         min_s: float = 1):
     h, _, s = colorsys.rgb_to_hls(*int2float(color))
+    s = min(s, min_s)
     l_ramp = np.linspace(l_range[1], l_range[0], resolution)
     return [float2int(colorsys.hls_to_rgb(h, l, s)) for l in l_ramp]
 
