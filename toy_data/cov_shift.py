@@ -68,3 +68,5 @@ def visualize_1D_regression(data, regressF=None, res=150, fig_width=500):
     if regressF:
         p.line(x_mesh, regressF(x_mesh), color='black')
     bp.show(p)
+
+

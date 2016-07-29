@@ -6,11 +6,13 @@ import toy_data.data_types as tp
 
 from toy_data import gaussian_mixtures as gmg
 
-COLOR = False
-COV_SHIFT = True
+COLOR = True
+COV_SHIFT = False
 
 if COLOR:
-    print(c.get_N_by_hue(3))
+    #print(c.get_N_by_hue(3))
+    cs = c.map_color([1,2,3,4], 100, (23, 123, 29))
+    print(cs)
 
 if False:
     x_dim = 2
