@@ -77,16 +77,14 @@ def visualize_1D_regression_with_tr_weights(data, weights, regressF=None, res=15
     p.xaxis.axis_label = 'X'
     p.yaxis.axis_label = 'y'
 
-    print(data.tr.color)
     tr_color = color.map_color(np.ravel(weights).tolist(), data.tr.color)
-    print(data.tst.color)
-    p.scatter(data.tr.X[:, 0], data.tr.y[:, 0],
-              color=tr_color, alpha=0.5, line_alpha=0, size=8,
-              legend="Training set"
-              )
     p.circle(data.tst.X[:, 0], data.tst.y[:, 0],
              color=data.tst.color, alpha=0.5, line_alpha=0, size=8,
              legend="Testing set"
+             )
+    p.circle(data.tr.X[:, 0], data.tr.y[:, 0],
+             color=tr_color, alpha=0.8, line_alpha=0, size=8,
+             legend="Training set"
              )
     x_mesh = np.linspace(data.X_range[0], data.X_range[1], res)
 

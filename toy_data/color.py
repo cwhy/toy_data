@@ -54,10 +54,10 @@ def random_color(v=0.7) -> (int, int, int):
 
 def create_ramp_by_color(resolution: int,
                          color: (int, int, int),
-                         v_range:(float, float)=(0.2, 0.8)):
-    h, s, _ = colorsys.rgb_to_hsv(*int2float(color))
-    v_ramp = np.linspace(v_range[1], v_range[0], resolution)
-    return [float2int(colorsys.hsv_to_rgb(h, s, v)) for v in v_ramp]
+                         l_range:(float, float)=(0.1, 0.8)):
+    h, _, s = colorsys.rgb_to_hls(*int2float(color))
+    l_ramp = np.linspace(l_range[1], l_range[0], resolution)
+    return [float2int(colorsys.hls_to_rgb(h, l, s)) for l in l_ramp]
 
 
 def map_color(arr: [], base_color=None, color_res=256) -> "":
