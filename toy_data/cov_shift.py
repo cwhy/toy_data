@@ -103,9 +103,11 @@ def visualize_2D_classification(data, classifyF=None, res=150, fig_width=500):
         _xx, _yy = np.meshgrid(x_mesh, y_mesh)
         y_hats = classifyF(np.vstack((np.ravel(_xx), np.ravel(_yy))).T)
         for _c in (True, False):
-            _y_hats_xy = y_hats[:, _c].reshape((res, res)) / 4
-            _c_col = np.tile(data.tr.colors[_c], (res, res, 1))
-            # print(_colors[_c])
+            if _c:
+                _y_hats_xy = y_hats.reshape((res, res)) / 4
+            else:
+                _y_hats_xy = (1 - y_hats).reshape((res, res)) / 4
+            _c_col = np.tile(data.tr.color[_c], (res, res, 1))
             _rgba = np.dstack((_c_col, np.round(255 * _y_hats_xy))).astype(np.uint8)
             img = np.squeeze(_rgba.view(np.uint32))
             p.image_rgba(image=[img], x=[_xr[0, 0]], y=[_xr[1, 0]],
