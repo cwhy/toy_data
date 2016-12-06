@@ -39,4 +39,7 @@ if COV_SHIFT:
 if MODEL:
     the_model = m.LinearBinary(2)
     cs = cov_shift.Gaussian_Shift_2D_BinaryClassification(model=the_model)
-    cov_shift.visualize_2D_classification(cs, classifyF=lambda x: x[:, 0] + x[:, 1] > 0)
+#    cov_shift.visualize_2D_classification(cs, classifyF=lambda x: x[:, 0] + x[:, 1] > 0)
+    cov_shift.visualize_2D_classification_with_tr_weights(cs,
+                                                          np.ravel(np.random.random(cs.tr.y.shape)),
+                                                          classifyF=lambda x: x[:, 0] + x[:, 1] > 0)
