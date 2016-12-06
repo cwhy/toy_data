@@ -8,9 +8,6 @@ class DataSet:
         y = model(X)
         return cls(X, y)
 
-
     def if_y_is(self, _c):
         idx = self.y == _c
         return self.X[idx, :]
-
-

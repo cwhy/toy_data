@@ -47,6 +47,12 @@ def get_N_by_hue(N, s=0.7, v=0.7):
     return colors
 
 
+def darker(color_int: (int, int, int), intensity=1.5) -> (int, int, int):
+    (h, s, v) = colorsys.rgb_to_hsv(*int2float(color_int))
+    v /= intensity
+    return float2int(colorsys.hsv_to_rgb(h, s, v))
+
+
 def random_color(v=0.7) -> (int, int, int):
     hsv = (rnd.random(), rnd.random(), v)
     return float2int(colorsys.hsv_to_rgb(*hsv))

@@ -4,6 +4,7 @@ From toy_data:
     Module for toy-data generation for ML experiments
 """
 import bokeh as bk
+
 import bokeh.plotting as bp
 import numpy as np
 import numpy.random as rnd
