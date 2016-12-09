@@ -78,7 +78,7 @@ def create_s_ramp_by_color(resolution: int,
     return [float2int(colorsys.hls_to_rgb(h, l, s)) for s in s_ramp]
 
 
-def map_color(arr: [], base_color=None, color_res=256, satur=True) -> "":
+def map_color(arr: [], base_color=None, color_res=256, satur=False) -> "":
     min_a, max_a = (min(arr), max(arr))
 
     def get_num_col_index(num):

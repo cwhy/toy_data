@@ -123,14 +123,14 @@ def visualize_2D_classification(data, classifyF=None, res=150, fig_width=500):
                 _col = color.int2hex(color.darker(data.colors[_c]))
             _y = np.ravel(_data.y)
             p.scatter(x=_data.X[_y == _c, 0],
-                     y=_data.X[_y == _c, 1],
-                     color=_col,
-                     alpha=0.6,
-                     line_alpha=0.6,
-                     line_width=1.5,
-                     size=9,
-                     marker=_data.marker,
-                     legend=_data.name + ", " + str(_c))
+                      y=_data.X[_y == _c, 1],
+                      color=_col,
+                      alpha=0.6,
+                      line_alpha=0.6,
+                      line_width=1.5,
+                      size=9,
+                      marker=_data.marker,
+                      legend=_data.name + ", " + str(_c))
     bp.show(p)
 
 

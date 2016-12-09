@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c1268c60-5100-4747-a0aa-f4b0cc287ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toy_data/color.py" afterPath="$PROJECT_DIR$/toy_data/color.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toy_data/cov_shift.py" afterPath="$PROJECT_DIR$/toy_data/cov_shift.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toy_data/test/test.html" afterPath="$PROJECT_DIR$/toy_data/test/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toy_data/test/test.py" afterPath="$PROJECT_DIR$/toy_data/test/test.py" />
     </list>
     <ignored path="toy_data.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +48,8 @@
       <file leaf-file-name="cov_shift.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/toy_data/cov_shift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+            <state relative-caret-position="418">
+              <caret line="153" column="16" lean-forward="false" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
               <folding>
                 <element signature="e#118#136#0" expanded="true" />
               </folding>
@@ -67,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/toy_data/test/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+            <state relative-caret-position="682">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -91,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="color.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="color.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/toy_data/color.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="286">
+              <caret line="80" column="59" lean-forward="false" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
               <folding>
                 <element signature="e#111#126#0" expanded="true" />
               </folding>
@@ -142,10 +142,10 @@
         <option value="$PROJECT_DIR$/toy_data/gaussian_mixtures.py" />
         <option value="$PROJECT_DIR$/toy_data/models.py" />
         <option value="$PROJECT_DIR$/toy_data/data_types.py" />
-        <option value="$PROJECT_DIR$/toy_data/color.py" />
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/toy_data/cov_shift.py" />
         <option value="$PROJECT_DIR$/toy_data/test/test.py" />
+        <option value="$PROJECT_DIR$/toy_data/cov_shift.py" />
+        <option value="$PROJECT_DIR$/toy_data/color.py" />
       </list>
     </option>
   </component>
@@ -573,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481282431139</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fixed a bug when there is no weight">
+      <created>1481282607672</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1481282607672</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -638,7 +645,8 @@
     <MESSAGE value="Better visualization" />
     <MESSAGE value="Fixed a Vis bug, Even Better visualization" />
     <MESSAGE value="EVEN Better visualization" />
-    <option name="LAST_COMMIT_MESSAGE" value="EVEN Better visualization" />
+    <MESSAGE value="Fixed a bug when there is no weight" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug when there is no weight" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -983,34 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toy_data/gaussian_mixtures.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/toy_data/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="e#113#131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/toy_data/color.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#111#126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/toy_data/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1037,20 +1017,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/toy_data/cov_shift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state relative-caret-position="418">
+          <caret line="153" column="16" lean-forward="false" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
           <folding>
             <element signature="e#118#136#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/toy_data/gaussian_mixtures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/toy_data/test/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+        <state relative-caret-position="682">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toy_data/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#113#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toy_data/color.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="80" column="59" lean-forward="false" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
+          <folding>
+            <element signature="e#111#126#0" expanded="true" />
           </folding>
         </state>
       </provider>
