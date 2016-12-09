@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toy_data/cov_shift.py" afterPath="$PROJECT_DIR$/toy_data/cov_shift.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toy_data/test/test.html" afterPath="$PROJECT_DIR$/toy_data/test/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toy_data/test/test.py" afterPath="$PROJECT_DIR$/toy_data/test/test.py" />
     </list>
     <ignored path="toy_data.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cov_shift.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cov_shift.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/toy_data/cov_shift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="214" column="4" lean-forward="false" selection-start-line="214" selection-start-column="4" selection-end-line="214" selection-end-column="4" />
+            <state relative-caret-position="198">
+              <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
               <folding>
                 <element signature="e#118#136#0" expanded="true" />
               </folding>
@@ -66,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/toy_data/test/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="589">
-              <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+              <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -143,8 +144,8 @@
         <option value="$PROJECT_DIR$/toy_data/data_types.py" />
         <option value="$PROJECT_DIR$/toy_data/color.py" />
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/toy_data/test/test.py" />
         <option value="$PROJECT_DIR$/toy_data/cov_shift.py" />
+        <option value="$PROJECT_DIR$/toy_data/test/test.py" />
       </list>
     </option>
   </component>
@@ -565,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481282183081</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="EVEN Better visualization">
+      <created>1481282431139</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1481282431139</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -629,7 +637,8 @@
     <MESSAGE value="Added weight visualization" />
     <MESSAGE value="Better visualization" />
     <MESSAGE value="Fixed a Vis bug, Even Better visualization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a Vis bug, Even Better visualization" />
+    <MESSAGE value="EVEN Better visualization" />
+    <option name="LAST_COMMIT_MESSAGE" value="EVEN Better visualization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -982,16 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toy_data/test/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/toy_data/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1038,10 +1037,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/toy_data/cov_shift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="214" column="4" lean-forward="false" selection-start-line="214" selection-start-column="4" selection-end-line="214" selection-end-column="4" />
+        <state relative-caret-position="198">
+          <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
             <element signature="e#118#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toy_data/test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

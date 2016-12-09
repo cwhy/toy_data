@@ -119,12 +119,10 @@ def visualize_2D_classification(data, classifyF=None, res=150, fig_width=500):
         for _c in (True, False):
             if _data.name == "Training set":
                 _col = color.int2hex(data.colors[_c])
-                line_alpha = 0
             else:
                 _col = color.int2hex(color.darker(data.colors[_c]))
-                line_alpha = 1
             _y = np.ravel(_data.y)
-            p.circle(x=_data.X[_y == _c, 0],
+            p.scatter(x=_data.X[_y == _c, 0],
                      y=_data.X[_y == _c, 1],
                      color=_col,
                      alpha=0.6,
