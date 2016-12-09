@@ -85,8 +85,8 @@ class Gaussian_Shift_2D_BinaryClassification:
         self.tst.color = list(map(color.darker, colors))
         self.tr.name = "Training set"
         self.tst.name = "Testing set"
-        self.tr.alpha = 0.3
-        self.tst.alpha = 0.7
+        self.tst.marker = "square"
+        self.tr.marker = "cross"
 
 
 def visualize_2D_classification(data, classifyF=None, res=150, fig_width=500):
@@ -116,20 +116,20 @@ def visualize_2D_classification(data, classifyF=None, res=150, fig_width=500):
                          dh=[_xr[1, 1] - _xr[1, 0]])
 
     for _data in (data.tr, data.tst):
-        if _data.name == "Training set":
-            _col = color.int2hex(data.color[_c])
-            line_alpha = 0
-        else:
-            _col = color.int2hex(map(color.darker, data.color[_c]))
-            line_alpha = 1
         for _c in (True, False):
+            if _data.name == "Training set":
+                _col = color.int2hex(data.colors[_c])
+                line_alpha = 0
+            else:
+                _col = color.int2hex(color.darker(data.colors[_c]))
+                line_alpha = 1
             _y = np.ravel(_data.y)
             p.circle(x=_data.X[_y == _c, 0],
                      y=_data.X[_y == _c, 1],
                      color=_col,
                      alpha=0.6,
-                     line_color='#000',
-                     line_width=2,
+                     line_color='#000000',
+                     line_width=1,
                      line_alpha=line_alpha,
                      size=8,
                      legend=_data.name + ", " + str(_c))
@@ -168,17 +168,16 @@ def visualize_2D_classification_with_tr_weights(data, weights, classifyF=None, r
             if _data.name == "Training set":
                 _weights = np.ravel(weights[_y == _c]).tolist()
                 _col = color.map_color(_weights, data.tr.color[_c])
-                marker = 'circle'
             else:
-                _col = color.int2hex(_data.color[_c])
-                marker = 'square'
+                _col = color.int2hex(data.colors[_c])
             p.scatter(x=_data.X[_y == _c, 0],
                       y=_data.X[_y == _c, 1],
                       color=_col,
                       alpha=0.6,
-                      line_alpha=0,
-                      size=8,
-                      marker=marker,
+                      line_alpha=0.6,
+                      line_width=1.5,
+                      size=9,
+                      marker=_data.marker,
                       legend=_data.name + ", " + str(_c))
     bp.show(p)
 
