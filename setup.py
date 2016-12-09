@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
     name='toy_data',
-    version='0.21dev',
+    version='0.22dev',
     description='Toy data for machine learning projects',
     author='Chen Yu',
     author_email='chenyu.nus@gmail.com',

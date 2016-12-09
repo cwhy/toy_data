@@ -58,17 +58,27 @@ def random_color(v=0.7) -> (int, int, int):
     return float2int(colorsys.hsv_to_rgb(*hsv))
 
 
-def create_ramp_by_color(resolution: int,
-                         color: (int, int, int),
-                         l_range: (float, float) = (0.3, 0.85),
-                         min_s: float = 1):
+def create_l_ramp_by_color(resolution: int,
+                           color: (int, int, int),
+                           l_range: (float, float) = (0.3, 0.85),
+                           min_s: float = 1):
     h, _, s = colorsys.rgb_to_hls(*int2float(color))
     s = min(s, min_s)
     l_ramp = np.linspace(l_range[1], l_range[0], resolution)
     return [float2int(colorsys.hls_to_rgb(h, l, s)) for l in l_ramp]
 
 
-def map_color(arr: [], base_color=None, color_res=256) -> "":
+def create_s_ramp_by_color(resolution: int,
+                           color: (int, int, int),
+                           s_range: (float, float) = (0.05, 0.85),
+                           l_range: (float, float) = (0.4, 0.6)):
+    h, l, _ = colorsys.rgb_to_hls(*int2float(color))
+    l = min(max(l, l_range[0]), l_range[1])
+    s_ramp = np.linspace(s_range[1], s_range[0], resolution)
+    return [float2int(colorsys.hls_to_rgb(h, l, s)) for s in s_ramp]
+
+
+def map_color(arr: [], base_color=None, color_res=256, satur=True) -> "":
     min_a, max_a = (min(arr), max(arr))
 
     def get_num_col_index(num):
@@ -76,7 +86,11 @@ def map_color(arr: [], base_color=None, color_res=256) -> "":
 
     arr_n = [get_num_col_index(c) for c in arr]
     if base_color:
-        color_ramp = [int2hex(c) for c in create_ramp_by_color(color_res, base_color)]
+        if satur:
+            color_ramp_int = create_s_ramp_by_color(color_res, base_color)
+        else:
+            color_ramp_int = create_l_ramp_by_color(color_res, base_color)
+        color_ramp = [int2hex(c) for c in color_ramp_int]
     else:
         color_ramp = palettes.viridis(color_res)
 
