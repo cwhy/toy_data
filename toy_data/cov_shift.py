@@ -85,7 +85,7 @@ class Gaussian_Shift_2D_BinaryClassification:
         self.tst.color = list(map(color.darker, colors))
         self.tr.name = "Training set"
         self.tst.name = "Testing set"
-        self.tst.marker = "square"
+        self.tst.marker = "circle"
         self.tr.marker = "cross"
 
 
@@ -128,10 +128,10 @@ def visualize_2D_classification(data, classifyF=None, res=150, fig_width=500):
                      y=_data.X[_y == _c, 1],
                      color=_col,
                      alpha=0.6,
-                     line_color='#000000',
-                     line_width=1,
-                     line_alpha=line_alpha,
-                     size=8,
+                     line_alpha=0.6,
+                     line_width=1.5,
+                     size=9,
+                     marker=_data.marker,
                      legend=_data.name + ", " + str(_c))
     bp.show(p)
 
@@ -155,7 +155,7 @@ def visualize_2D_classification_with_tr_weights(data, weights, classifyF=None, r
                 _y_hats_xy = y_hats.reshape((res, res)) / 5
             else:
                 _y_hats_xy = (1 - y_hats).reshape((res, res)) / 5
-            _c_col = np.tile(data.tr.color[_c], (res, res, 1))
+            _c_col = np.tile(data.colors[_c], (res, res, 1))
             _rgba = np.dstack((_c_col, np.round(255 * _y_hats_xy))).astype(np.uint8)
             img = np.squeeze(_rgba.view(np.uint32))
             p.image_rgba(image=[img], x=[_xr[0, 0]], y=[_xr[1, 0]],
@@ -167,7 +167,7 @@ def visualize_2D_classification_with_tr_weights(data, weights, classifyF=None, r
             _y = np.ravel(_data.y)
             if _data.name == "Training set":
                 _weights = np.ravel(weights[_y == _c]).tolist()
-                _col = color.map_color(_weights, data.tr.color[_c])
+                _col = color.map_color(_weights, data.colors[_c])
             else:
                 _col = color.int2hex(data.colors[_c])
             p.scatter(x=_data.X[_y == _c, 0],
