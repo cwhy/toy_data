@@ -12,6 +12,6 @@ setup(
     packages=['toy_data', 'toy_data.test'],
     install_requires=[
         "numpy",
-        "bokeh",
+        "bokeh", 'scipy',
     ],
 )
