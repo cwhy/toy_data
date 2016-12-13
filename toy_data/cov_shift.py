@@ -114,6 +114,8 @@ def visualize_2D_classification(data, classifyF=None, res=150, fig_width=500):
                 _y_hats_xy = y_hats.reshape((res, res)) / 4
             else:
                 _y_hats_xy = (1 - y_hats).reshape((res, res)) / 4
+            if _y_hats_xy.any() > 1 or _y_hats_xy.any() < 0:
+                _y_hats_xy = min_max_norm(_y_hats_xy)
             _c_col = np.tile(data.colors[_c], (res, res, 1))
             _rgba = np.dstack((_c_col, np.round(255 * _y_hats_xy))).astype(np.uint8)
             img = np.squeeze(_rgba.view(np.uint32))
@@ -159,7 +161,7 @@ def visualize_2D_classification_with_tr_weights(data, weights, classifyF=None, r
                 _y_hats_xy = y_hats.reshape((res, res)) / 5
             else:
                 _y_hats_xy = (1 - y_hats).reshape((res, res)) / 5
-            if any(_y_hats_xy > 1) or any(_y_hats_xy < 0):
+            if _y_hats_xy.any() > 1 or _y_hats_xy.any() < 0:
                 _y_hats_xy = min_max_norm(_y_hats_xy)
             _c_col = np.tile(data.colors[_c], (res, res, 1))
             _rgba = np.dstack((_c_col, np.round(255 * _y_hats_xy))).astype(np.uint8)

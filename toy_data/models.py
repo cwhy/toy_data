@@ -32,7 +32,7 @@ def LinearBinary(
     _var_dot = 1
     dots = rnd.normal(0, _var_dot, (dim, dim))
     dots1 = append1(dots)
-    W = null(dots1)
+    W = nullspace(dots1)
 
     def _f(x):
         if x.shape[1] != dim:
