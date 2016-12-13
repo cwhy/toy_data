@@ -15,6 +15,12 @@ from toy_data import data_types
 DataSet = data_types.DataSet
 
 
+def min_max_norm(_x):
+    _min = np.min(_x)
+    _max = np.max(_x)
+    return (_x - _min) / (_max - _min)
+
+
 class Gaussian_Shift_1D:
     def __init__(self,
                  model,
@@ -153,6 +159,8 @@ def visualize_2D_classification_with_tr_weights(data, weights, classifyF=None, r
                 _y_hats_xy = y_hats.reshape((res, res)) / 5
             else:
                 _y_hats_xy = (1 - y_hats).reshape((res, res)) / 5
+            if any(_y_hats_xy > 1) or any(_y_hats_xy < 0):
+                _y_hats_xy = min_max_norm(_y_hats_xy)
             _c_col = np.tile(data.colors[_c], (res, res, 1))
             _rgba = np.dstack((_c_col, np.round(255 * _y_hats_xy))).astype(np.uint8)
             img = np.squeeze(_rgba.view(np.uint32))
