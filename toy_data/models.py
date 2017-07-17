@@ -6,7 +6,6 @@ From toy_data:
 
 import numpy as np
 import numpy.random as rnd
-from scipy import interpolate
 
 
 def nullspace(a, rtol=1e-5):

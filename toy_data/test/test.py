@@ -4,12 +4,14 @@ import toy_data.models as m
 import toy_data.cov_shift as cov_shift
 import toy_data.data_types as tp
 import numpy as np
+import toy_data.visualize as vs
 
 from toy_data import gaussian_mixtures as gmg
 
 COLOR = False
 COV_SHIFT = False
-MODEL = True
+MODEL = False
+VISUALIZE = True
 
 if COLOR:
     # print(c.get_N_by_hue(3))
@@ -39,8 +41,8 @@ if COV_SHIFT:
     cs = cov_shift.Gaussian_Shift_2D_BinaryClassification(model=the_model)
     # cov_shift.visualize_2D_classification(cs, classifyF=lambda x: x[:, 0] + x[:, 1] > 0)
     cov_shift.visualize_2D_classification_with_tr_weights(cs,
-                                                         np.ravel(np.random.random(cs.tr.y.shape)),
-                                                         classifyF=lambda x: x[:, 0] + x[:, 1] > 0)
+                                                          np.ravel(np.random.random(cs.tr.y.shape)),
+                                                          classifyF=lambda x: x[:, 0] + x[:, 1] > 0)
     # cov_shift.visualize_2D_classification_with_tr_weights(cs,
     #                                                      np.ravel(np.random.random(cs.tr.y.shape)))
 
@@ -51,3 +53,8 @@ if MODEL:
     cs = cov_shift.Gaussian_Shift_2D_BinaryClassification(model=the_model)
     # cov_shift.visualize_2D_classification(cs, classifyF=lambda x: x[:, 0] + x[:, 1] > 0)
     # cov_shift.visualize_2D_classification(cs, classifyF=the_model)
+
+if VISUALIZE:
+    x = np.linspace(0, 10, 100)
+    d = tp.DataSet.from_X(x[:, np.newaxis], m.Sine_1D())
+    vs.regression_1D(d)
