@@ -2,10 +2,11 @@ import numpy as np
 import bokeh.plotting as bp
 
 
-def regression_1D(data_set, regressF=None, res=150, fig_width=500):
+def regression_1D(data_set, regressF=None, res=150,
+                  fig_height=500, fig_width=500):
     p = bp.figure(
         plot_width=fig_width,
-        plot_height=fig_width)
+        plot_height=fig_height)
     p.xaxis.axis_label = 'X'
     p.yaxis.axis_label = 'y'
 
